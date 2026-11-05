@@ -1,69 +1,102 @@
-import Image from "next/image";
+import { Suspense } from "react";
+import { FaCaretDown, FaCaretUp } from "react-icons/fa";
 
-export default function Home() {
+import Banner from "./(Pages)/Home/Banner";
+import ProductCard from "./(Pages)/Home/ProductCard";
+import LoadingSpinner from "./component/Loading";
+
+const Page = () => {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <main className="min-h-screen w-full">
+      {/* Hero Banner */}
+      <Banner />
+
+      <Suspense fallback={<LoadingSpinner />}>
+        <div className="container mx-auto space-y-8 px-3 py-6 sm:px-5 sm:py-8 lg:space-y-10">
+          {/* Price Increased Products */}
+          <section className="overflow-hidden rounded-xl border border-base-300 bg-base-100 p-3 sm:rounded-2xl sm:p-5 lg:p-6">
+            <div className="mb-5 flex items-center justify-between gap-3 border-b border-base-200 pb-4">
+              <div className="flex items-center gap-3">
+                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-error/10 sm:h-10 sm:w-10">
+                  <FaCaretUp className="text-xl text-error sm:text-2xl" />
+                </div>
+
+                <div>
+                  <h2 className="text-sm font-bold text-base-content sm:text-lg">
+                    আজ দাম বেড়েছে
+                  </h2>
+
+                  <p className="mt-0.5 text-[10px] text-base-content/50 sm:text-xs">
+                    যেসব পণ্যের দাম আজ বৃদ্ধি পেয়েছে
+                  </p>
+                </div>
+              </div>
+
+              <span className="shrink-0 rounded-full bg-error/10 px-2.5 py-1 text-[10px] font-semibold text-error sm:px-3 sm:text-xs">
+                Price Up
+              </span>
+            </div>
+
+            <ProductCard type="increase" />
+          </section>
+
+          {/* Price Decreased Products */}
+          <section className="overflow-hidden rounded-xl border border-base-300 bg-base-100 p-3 sm:rounded-2xl sm:p-5 lg:p-6">
+            <div className="mb-5 flex items-center justify-between gap-3 border-b border-base-200 pb-4">
+              <div className="flex items-center gap-3">
+                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-success/10 sm:h-10 sm:w-10">
+                  <FaCaretDown className="text-xl text-success sm:text-2xl" />
+                </div>
+
+                <div>
+                  <h2 className="text-sm font-bold text-base-content sm:text-lg">
+                    আজ দাম কমেছে
+                  </h2>
+
+                  <p className="mt-0.5 text-[10px] text-base-content/50 sm:text-xs">
+                    যেসব পণ্যের দাম আজ হ্রাস পেয়েছে
+                  </p>
+                </div>
+              </div>
+
+              <span className="shrink-0 rounded-full bg-success/10 px-2.5 py-1 text-[10px] font-semibold text-success sm:px-3 sm:text-xs">
+                Price Down
+              </span>
+            </div>
+
+            <ProductCard type="decrease" />
+          </section>
+
+          {/* All Products */}
+          <section className="overflow-hidden rounded-xl border border-base-300 bg-base-100 p-3 sm:rounded-2xl sm:p-5 lg:p-6">
+            <div className="mb-5 flex items-center justify-between gap-3 border-b border-base-200 pb-4">
+              <div className="flex items-center gap-3">
+                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-primary/10 sm:h-10 sm:w-10">
+                  <span className="text-lg">🛒</span>
+                </div>
+
+                <div>
+                  <h2 className="text-sm font-bold text-base-content sm:text-lg">
+                    সব পণ্য
+                  </h2>
+
+                  <p className="mt-0.5 text-[10px] text-base-content/50 sm:text-xs">
+                    সকল পণ্যের বর্তমান বাজার দর
+                  </p>
+                </div>
+              </div>
+
+              <span className="shrink-0 rounded-full bg-base-200 px-2.5 py-1 text-[10px] font-semibold text-base-content/70 sm:px-3 sm:text-xs">
+                All Products
+              </span>
+            </div>
+
+            <ProductCard type="all" />
+          </section>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+      </Suspense>
+    </main>
   );
-}
+};
+
+export default Page;

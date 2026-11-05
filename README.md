@@ -1,36 +1,37 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🛒 বাজার দর (BazarDor)
 
-## Getting Started
+### Know Today's Market Price, Make Smarter Decisions.
 
-First, run the development server:
+**বাজার দর (BazarDor)** is a Bangla-based market price tracking platform that helps users explore daily product prices, compare market rates, and stay informed about price changes. It provides an easy way to check essential product prices and make better purchasing decisions.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🚀 Technologies Used
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Next.js** – React framework for building the application.
+- **TypeScript** – Type-safe development.
+- **Tailwind CSS** – Responsive UI styling.
+- **HeroUI** – UI components.
+- **Better Auth** – User authentication and session management.
+- **React Icons** – Icons and visual elements.
+- **React Hot Toast** – Notifications and feedback.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## ✨ Key Features
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. **Daily Market Prices** – Explore the latest prices of essential products in one place.
 
-## Learn More
+2. **Price Comparison** – Compare product prices across different markets to find the best rates.
 
-To learn more about Next.js, take a look at the following resources:
+3. **Price Change Tracking** – Identify products with increasing or decreasing prices compared to previous days.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+4. **Category-Based Navigation** – Browse products easily through organized categories.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+5. **User Authentication & Profile** – Sign up, sign in, manage your profile, and access detailed product information.
 
-## Deploy on Vercel
+## 📱 Responsive Design
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+BazarDor is designed to provide a smooth browsing experience across desktop, tablet, and mobile devices.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+**BazarDor – বাজার দর**
+
+_Stay informed. Compare prices. Shop smarter._
