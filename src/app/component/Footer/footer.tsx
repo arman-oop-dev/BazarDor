@@ -15,13 +15,6 @@ const Footer = () => {
             পারে।
           </p>
         </div>
-
-        {/* Bottom Copyright */}
-        <div className="mt-5 pt-4 border-t border-base-300/70 text-center">
-          <p className="text-[11px] text-base-content/40">
-            © {new Date().getFullYear()} বাজার দর। সর্বস্বত্ব সংরক্ষিত।
-          </p>
-        </div>
       </div>
     </footer>
   );
