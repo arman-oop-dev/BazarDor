@@ -30,7 +30,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         geist.variable,
       )}
     >
-      <body className="flex min-h-screen flex-col bg-base-300">
+      <body
+        className="flex min-h-screen flex-col bg-base-300"
+        cz-shortcut-listen="true"
+      >
         <Navbar />
         <ToastMessage />
         {children}
